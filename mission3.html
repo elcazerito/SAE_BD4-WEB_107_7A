@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 3</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/KDou.ico">
+</head>
+<body>
+
+	<!-- Barre de navigation -->
+    <div class="nav-bar">
+    	<nav>
+    		<ul>
+    			<li>
+    				<a href="index.html">
+    					<img src="images/KDou_logo.png" height="30" alt="Accueil">
+    				</a>
+    			</li>
+    			<li>
+    				<a href="mission1.html">Mission 1</a>
+    			</li>
+    			<li>
+    				<a href="mission2.html">Mission 2</a>
+    			</li>
+    			<li>
+    				<a href="#">Mission 3</a>
+    			</li>
+                <li>
+                    <a href="charte_graphique.html">Charte graphique</a>
+                </li>
+    		</ul>
+    	</nav>
+    </div>
+    <div class="container">
+
+        <!-- Contenu -->
+        <div class="contenu">
+
+            <!-- intro = introduction -->
+            <h1 id="intro">Introduction</h1>
+            <p>Cette mission est très différente des deux précédentes, en effet, là où les anciennes missions servaient d'introduction, celle-ci est une mission réelle de notre client, KDou, elle est donc divisée en cinq parties que vous pouvez voir à gauche, cette page sera donc naturellement plus longue que les précédentes.</p>
+            
+            <!-- heal = soin (en anglais) -->
+            <h1 id="heal">Santé</h1>
+            <p>KDou se pose des questions (légitimes) sur l'impact sur la santé de sa gamme de produits, pour être plus précis, elle s'intéresse à comment axer son marketing autour de ça et comment améliorer cet aspect de sa gamme si tant est qu'il est améliorable ainsi que comment rester rentable malgré ça.
+            <br>Dans un premier temps, KDou nous demande le nombre de boissons et de desserts dans sa gamme de produits et leurs prix (s'ils sont au-dessus de 50€/u).
+            <br>Après une rapide requête, on se rend compte qu'ils en ont 8, ce qui est franchement peu, on ne s'attarde donc pas dessus.
+            <br>Il nous demande ensuite les pays de provenance des boissons et desserts, et après une petite vérification on se rend compte que ces produits viennent majoritairement d'Europe et d'Amérique du Nord, ce qui est bon dans le premier cas et beaucoup moins bon dans le second car cela signifie que les coûts de port augmentent et que l'empreinte carbonne augmente, ce qui n'est jamais bon dans une entreprise, il n'y a cependant rien d'affolant à ce sujet. 
+            <br>Cette information a plusieurs utilités : elle permet de calculer les coûts d'import, de connaître les normes sanitaires des pays exportateurs et de calculer son empreinte carbonne.
+            <br>Comme une bonne partie des produits viennent d'Europe, les normes d'hygiènes sont sensiblement les mêmes, donc les 3 facteurs sont au <span style="color: green;">vert</span>, il n'y a pas de problème spécifique. Pour l'Amérique, c'est plus spéciale, dans un premier temps, l'empreinte carbonne et le coût d'import sont au <span style="color:red;">rouge</span>, concernant les normes sanitaires, c'est probablement entre <span style="color:green;">vert</span> - <span style="color:orange;">orange</span>, cependant cela dépend des pays, et cela demanderait une étude plus approfondie.
+            <br>Il nous demande ensuite les catégories de produits qui rapportent le plus d'argent, et on obtient ce table après une légère requête :</p>
+            
+            <!-- Tableau CA par catégorie -->
+            <table>
+                <tr class="first_line">
+                    <td>
+                    <td>Chiffres d'affaires par catégorie</td>
+                    <td>
+                </tr>
+                <tr class="first_line">
+                    <td>Code catégorie</td>
+                    <td>Nom catégorie</td>
+                    <td>Chiffre d'affaire</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Boissons</td>
+                    <td>15 077,35 €</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Produits laitiers</td>
+                    <td>12 245,73 €</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Viandes</td>
+                    <td>9 631,73 €</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Desserts</td>
+                    <td>9 238,00 €</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Poissons et fruits de mer</td>
+                    <td>7 790,58 €</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Produits sec</td>
+                    <td>5 565,35 €</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Condiments</td>
+                    <td>5 558,60 €</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Pâtes et céréales</td>
+                    <td>5 084,50 €</td>
+                </tr>
+            </table>
+            <h1 id="offre">Offre</h1>
+            <p>Maintenant que KDou a les informations qui l'intéressent, il cherche à savoir si son offre est juste où si elle n'est pas assez ou trop attrayante.
+            <br>Tout d'abord, on regarde si il y a des produits que les fournisseurs ne vendent plus très bien, le résultat est disponible en annexe, cependant, je vais tout de même vous mettre la requête SQL associée :</p>
+
+            <!-- Code SQL (brouillon en code mais correct en site) -->
+            <div class="code_SQL">
+                <pre><code class="language-SQL">
+<span class="fonction">SELECT</span> <span class="argument">Fournisseur.Societe</span>, <span class="argument">Fournisseur.NoFour</span>, <span class="argument">Produit.NomProd</span>, <span class="argument">Produit.RefProduit</span>
+<span class="fonction">FROM</span> <span class="argument">Fournisseur</span> <span class="operation">INNER JOIN</span>(<span class="argument">Produit</span> <span class="operation">LEFT JOIN</span> <span class="argument">DetailCommande</span>
+    <span class="fonction">ON</span> <span class="argument">Produit.RefProduit</span> <span class="operation">=</span> <span class="argument">DetailCommande.RefProduit</span>)
+    <span class="fonction">ON</span> <span class="argument">Fournisseur.NoFour</span> <span class="operation">=</span> <span class="argument">Produit.NoFour</span>
+<span class="fonction">WHERE</span> ((<span class="argument">DetailCommande.RefProduit</span>) <span class="operation">Is Null</span>);
+                </code></pre>
+            </div>
+            <p>Après ça, KDou nous a demandé de lui envoyer des informations sur les produits qui ne sont pas commandés pour chaque catégorie, après une rapide requête, on obtient ce tableau :</p>
+
+            <!-- Tableau produits non vendus par catégorie -->
+            <table>
+                <tr class="first_line">
+                    <td colspan="2">Produits non vendus par catégorie</td>
+                </tr>
+                <tr class="first_line">
+                    <td>Nom catégorie</td>
+                    <td>Nombre de produits non vendus par catégorie</td>
+                </tr>
+                <tr>
+                    <td>Boissons</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Desserts</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Condiments</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Pâtes et céréales</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Poissons et fruits de mer</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>Ce tableau nous montre que les desserts sont grands gagnants en terme de produits non-vendus, quand aux autres on peut dire que c'est en réalité assez négigeable.
+            <br>Après ça KDou nous demande une dernière question pour savoir comment ajuster son offre :
+            <br><i>Combien d'offres sont réalisées par pays ?</i>
+            <br>Pour la requête, elle est comme d'habitude présente dans le compte-rendu, cependant nous allons tout de même vous montrer le résultat renvoyé par Access :</p>
+
+            <!-- Tableau nombre d'ofrres/pays -->
+            <table>
+                <tr class="first_line">
+                    <td colspan="2">Nombre d'offres par pays</td>
+                </tr>
+                <tr class="first_line">
+                    <td>Pays</td>
+                    <td>Nombre d'offres</td>
+                </tr>
+                <tr>
+                    <td>Royaume-Uni</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>Etats-Unis</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>Allemange</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Australie</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Brésil</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Cananda</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Suède</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>France</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Japon</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Italie</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Singapour</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Espagne</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Finlande</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Norvège</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Danemark</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Pays-Bas</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>Pour conclure sur ce tableau, on voit clairement une supériorité dans le nombre d'offres vendues par le Royaume-Uni et par l'Europe plus généralement, ce qui est globalement une bonne chose car KDou a une clientèle plutôt européenne, ce qui est meilleur pour la planète.</p>
+            
+            <!-- Provenance des produits -->
+            <h1 id="provenance">Provenance des produits</h1>
+            <p>Après s'être intéressé à la santé et aux offres, il est temps de s'intéresser à la provenance des produits que nous avons déjà abordé, et donc plus largement <b>l'empreinte carbonne</b>.
+            <br>Tout d'abord, KDou nous a demandé de nous intéresser à l'Allemagne et à ses voisins, et nous demande les desserts et les boissons vendus à moins de 100€, puis les fournisseurs vendant uniquement des desserts ou des boissons et enfin ceux vendant à la fois des desserts et des boissons.
+            <br>Après quelques requêtes, on a obtenu les résultats que nous ne savons personnellement pas exploiter, cependant nous les transmettons tout de même à KDou conformément à leur demande.</p>
+
+            <!-- Clients et remises -->
+            <h1 id="clients">Clients et remises</h1>
+            <p>Concernant les clients et les remises, il n'y a en réalité pas grand chose d'intéressant à exploiter, c'est pourquoi, nous ne nous attarderont pas dessus, cependant, si nous devions raconter quelque chose, nous dirions qu'il existe des clients qui n'ont jamais eu certaines remises intéressantes qui pourraient potentiellement inciter à acheter davantage de produits.</p>
+
+            <!-- Annexe -->
+            <h1 id="annexe">Annexe</h1>
+            <h2 id="sujet">Voici le sujet que nous avons reçu :</h2>
+            <div class="docs">
+                <iframe src="sources/SUJET__Sae104_2024_Mission3.pdf" width="100%" height="750"></iframe>
+            </div>
+            <h2 id="compte-rendu">Voici notre compte-rendu :</h2>
+            <div class="docs">
+                <iframe src="sources/SAE_BD3_AlexandreGUELY_MichaelAngeAKE_AlanKHIARI_107.pdf" width="100%" height="750"></iframe>
+            </div>
+        </div>
+
+        <!-- Chapitres -->
+        <div class="chap">
+            <ol type="I">
+                <li>
+                    <a href="#intro">Introduction</a>
+                </li>
+                <li>
+                    <a href="#heal">Santé</a>
+                </li>
+                <li>
+                    <a href="#offre">Offre</a>
+                </li>
+                <li>
+                    <a href="#provenance">Provenance des produits</a>
+                </li>
+                <li>
+                    <a href="#clients">Clients et remises</a>
+                </li>
+                <li>
+                    <a href="#conc">Conclusion</a>
+                </li>
+                <li>
+                    <a href="#annexe">Annexe</a>
+                </li>
+                <ul>
+                    <li>
+                        <a href="#sujet">Sujet</a>
+                    </li>
+                    <li>
+                        <a href="#compte-rendu">Compte-rendu</a>
+                    </li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Crédits en bas de page -->
+    <div class="credits">
+        <p>Site réalisé par @Cazer (Alexandre GUELY)</p>
+    </div>
+</body>

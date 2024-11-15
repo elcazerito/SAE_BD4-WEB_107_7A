@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 2</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/KDou.ico">
+</head>
+<body>
+
+	<!-- Barre de navigation -->
+    <div class="nav-bar">
+    	<nav>
+    		<ul>
+    			<li>
+    				<a href="index.html">
+    					<img src="images/KDou_logo.png" height="30" alt="Accueil">
+    				</a>
+    			</li>
+    			<li>
+    				<a href="mission1.html">Mission 1</a>
+    			</li>
+    			<li>
+    				<a href="#">Mission 2</a>
+    			</li>
+    			<li>
+    				<a href="mission3.html">Mission 3</a>
+    			</li>
+                <li>
+                    <a href="charte_graphique.html">Charte graphique</a>
+                </li>
+    		</ul>
+    	</nav>
+    </div>
+    <div class="container">
+
+        <!-- Contenu -->
+        <div class="contenu">
+            <!-- pema = Prise en main Access -->
+            <h1 id="pema">Prise en main - Access</h1>
+            <p>La première et seule chose à vrai dire lors de cette mission fut de découvrir <i>Access</i> et comment l'utiliser correctement, les questions n'ont globalement pas changé, mais il y a eu une variable qui a considérablement accéléré notre travail : les ✨<i>requêtes</i>✨, mais qu'est-ce qu'une requête ? En effet, quand on pense au mot "requête", on pense directement au fait de demander quelque chose, et c'est un peu comme ça que ça fonctionne en fait, on demande à Access de nous donner des informations qui peuvent même être complexes grâce au langage <b>SQL</b> ou au <b>QBE</b> qui est en réalité une interface qui convertit ce que tu lui indique en SQL, mais plutôt que de vous décrire comment fonctionne le QBE, mieux vaut vous le montrer :</p>
+            <img src="images/QBE.jpg" width="750" alt="Représentation de l'interface QBE">
+            <p>Comme vous le voyez, il n'y a rien de complexe, on indique d'abord les tables concernées par notre requête, l'équivalent du <span class="code">FROM</span> en SQL.
+            <br>On indique ensuite dans "Champ" les colonnes qui nous intéressent, puis dans "Critères" les conditions s'il y a, l'équivalent du <span class="code">WHERE</span> en SQL.
+            <br>Enfin, on coche les colonnes qu'on veut revoir parmi celles séléctionnées (ou plutôt décoche celles qui ne nous intéressent pas), l'équivalent du <span class="code">SELECT</span> en SQL.</p>
+            
+            <!-- conc = Conclusion -->
+            <h1 id="conc">Conclusion</h1>
+            <p>Le SQL, bien que moins esthétique, répond au problème majeur d'Excel : la diversité de tables. En effet, dans une vraie base de donnée, il y a une grosse quantité de tables, et bien qu'Excel soit aussi performant que le SQL sur une table, la tendance change radicalement dès le moment où on augmente le nombre de tables (liées entre elles). Quand au souci majeur, ce serait qu'il est moins intuitif qu'Excel pour un débutant, mais ce souci est vite palié et ce n'est rien de grave.
+            <br>En conclusion, Access est bien plus pratique qu'Excel, car il n'y en rien inférieur à Excel (façon de parler) et résout ses problèmes majeurs.</p>
+            
+            <!-- Annexe -->
+            <h1 id="annexe">Annexe</h1>
+            <h2 id="sujet">Voici le sujet que nous avons reçu  :</h2>
+            <div class="docs">
+                <iframe src="sources/SUJET__Sae104_2024_Mission2.pdf" width="100%" height="750"></iframe>
+            </div>
+            <br>
+            <h2 id="compte-rendu">Voici notre compte-rendu :</h2>
+            <div class="docs">
+                <iframe src="sources/SAE_BD2_AlexandreGUELY_MichaelAngeAKE_AlanKHIARI_107.pdf" width="100%" height="750"></iframe>
+            </div>
+        </div>
+
+        <!-- Chapitres -->
+        <div class="chap">
+            <ol type="I">
+                <li>
+                    <a href="#pema">Prise en main - Access</a>
+                </li>
+                <li>
+                    <a href="#conc">Conclusion</a>
+                </li>
+                <li>
+                    <a href="#annexe">Annexe</a>
+                </li>
+                <ul>
+                    <li>
+                        <a href="#sujet">Sujet</a>
+                    </li>
+                    <li>
+                        <a href="#compte-rendu">Compte-rendu</a>
+                    </li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Crédits en bas de page -->
+    <div class="credits">
+        <p>Site réalisé par @Cazer (Alexandre GUELY)</p>
+    </div>
+</body>

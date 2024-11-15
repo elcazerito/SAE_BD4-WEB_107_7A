@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 1</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/KDou.ico">
+</head>
+<body>
+
+	<!-- Barre de navigation -->
+    <div class="nav-bar">
+    	<nav>
+    		<ul>
+    			<li>
+    				<a href="index.html">
+    					<img src="images/KDou_logo.png" height="30" alt="Accueil">
+    				</a>
+    			</li>
+    			<li>
+    				<a href="#">Mission 1</a>
+    			</li>
+    			<li>
+    				<a href="mission2.html">Mission 2</a>
+    			</li>
+    			<li>
+    				<a href="mission3.html">Mission 3</a>
+    			</li>
+                <li>
+                    <a href="charte_graphique.html">Charte graphique</a>
+                </li>
+    		</ul>
+    	</nav>
+    </div>
+    <div class="container">
+
+        <!-- Contenu -->
+        <div class="contenu">
+            <!-- pemt = Prise en main tableur -->
+            <h1 id="pemt">Prise en main - Tableurs</h1>
+            <p>Notre premier objectif fut de nous familiariser avec les Tables de données, donc avant de nous intéresser au logiciel de gestion de bases de données le plus connu ✨<i>Excel</i>✨, on a dû en apprendre davantage sur le contenu, notre premier objectif fut donc de découvrir ce que l'on appelle les <i>clés primaires</i>, la clé primaire est la pièce centrale de la table (il peut y en avoir plusieurs), c'est une clé qui n'a que des valeurs uniques comme un identifiant, à chaque individu/produit est lié un identifiant qui est unique dans sa table, le cas contraire serait une erreur. Ce fut simple, c'est pourquoi je ne m'attarderai pas dessus, voici tout de même un tableau des différentes clés primaires par table :</p>
+            <table>
+                <tr class="first_line">
+                    <td>Tables</td>
+                    <td>Clés primaires</td>
+                </tr>
+                <tr>
+                    <td>Fournisseur</td>
+                    <td>N°Fournisseur</td>
+                </tr>
+                <tr>
+                    <td>Produit</td>
+                    <td>Réf Produit</td>
+                </tr>
+                <tr>
+                    <td>Catégorie</td>
+                    <td>Code Catégorie</td>
+                </tr>
+                <tr>
+                    <td>Clientèle</td>
+                    <td>Code Client</td>
+                </tr>
+                <tr>
+                    <td>Commande</td>
+                    <td>N° Commande</td>
+                </tr>
+                <tr>
+                    <td>DétailCommande</td>
+                    <td></td>
+                </tr>
+            </table>
+            <p>Après avoir identifié les différentes clés primaires, notre objectif suivant fut de découvrir ce que l'on appelle les ✨<i>clés secondaires</i>✨. Pour l'expliquer simplement (car c'est simple), une clé secondaire d'une table est la clé primaire d'une autre table, voici un tableau des différentes clés secondaires :</p>
+            <table>
+                <tr class="first_line">
+                    <td>Tables</td>
+                    <td>Clés secondaires</td>
+                </tr>
+                <tr>
+                    <td>Fournisseur</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Produit</td>
+                    <td>N° Fournisseur, Code Catégorie</td>
+                </tr>
+                <tr>
+                    <td>Catégorie</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Clientèle</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>Commande</td>
+                    <td>Code Client</td>
+                </tr>
+                <tr>
+                    <td>DétailCommande</td>
+                    <td>RéfProduit, N° Commande</td>
+                </tr>
+            </table>
+
+            <!-- peme = prise en main - Excel -->
+            <h1 id="peme">Prise en main - Excel</h1>
+            <p>Après avoir analysé ces informations, nous avons dû nous familiariser avec Excel avec lequel Alexandre était déjà à l'aise, ce ne fut donc pas bien compliqué, on nous a demandé des informations spécifiques à rechercher dans une table, mais lorsqu'on commençait à parler de plusieurs tables, ça devenait vite une galère, pour récupérer l'information il fallait faire une recherche sur une première table, puis aller sur la suivante et rechercher les informations liées à la donnée récoltée (elles pouvaient être multiples) et réitérer jusqu'au résultat.
+            <br>Ce processus à deux gros problèmes : c'est long et ça laisse une grande place aux erreurs au vu du nombre d'itérations.</p>
+
+            <!-- conc = conclusion -->
+            <h1 id="conc">Conclusions sur cette mission</h1>
+            <p>Cette mission n'avait pas forcément pour but de faire de vraies recherches en terme de données, mais plutôt de nous familiariser avec le monde des tableurs, de nous montrer Excel, mais surtout de nous montrer ses limites, et elles sont très présentes, en effet, Excel est quasiment parfait dans la gestion d'<b>une</b> table, mais lorsqu'on commence à parler de trois, quatre tables, il a de grosse lacunes, c'est pourquoi il nous faut une alternative pour ce cas-là qui est en réalité la majorité des gestions de données dans le monde professionnel, et pour cela on va découvrir le logiciel ✨<i>Access</i>✨.</p>
+
+            <!-- Annexe -->
+            <h1 id="annexe">Annexe</h1>
+            <h2 id="sujet">Voici le sujet que nous avons reçu  :</h2>
+            <div class="docs">
+                <iframe src="sources/SUJET__Sae104_2024_Mission1.pdf" width="100%" height="750"></iframe>
+            </div>
+            <br>
+            <h2 id="compte-rendu">Voici notre compte-rendu :</h2>
+            <div class="docs">
+                <iframe src="sources/AlexandreGUELY_MichaelAngeAKE_AlanKHIABI_107_SAE_BD1.pdf" width="100%" height="750"></iframe>
+            </div>
+        </div>
+
+        <!-- Chapitres -->
+        <div class="chap">
+            <ol type="I">
+                <li>
+                    <a href="#pemt">Prise en main - Tableurs</a>
+                </li>
+                <li>
+                    <a href="#peme">Prise en main - Excel</a>
+                </li>
+                <li>
+                    <a href="#conc">Conclusion</a>
+                </li>
+                <li>
+                    <a href="#annexe">Annexe</a>
+                </li>
+                <ul>
+                    <li>
+                        <a href="#sujet">Sujet</a>
+                    </li>
+                    <li>
+                        <a href="#compte-rendu">Compte-rendu</a>
+                    </li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Crédits en bas de page -->
+    <div class="credits">
+        <p>Site réalisé par @Cazer (Alexandre GUELY)</p>
+    </div>
+</body>
